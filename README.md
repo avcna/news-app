@@ -9,11 +9,25 @@
 - Jalankan aplikasi dengan perintah `npm run dev` di terminal
 - buka `http://localhost:5173` di web browser
 
+# !!! Perhatian !!!
+API KEY yang digunakan pada file .env (secara default) dapat digunakan, tetapi dikarenakan menggunakan free plan, maka hanya dapat meng-hit 50x dalam 2 jam. Sehingga lebih baik membuat API KEY sendiri pada link `https://newsapi.org/`.
+
 # Akun Dummy untuk login
 
 - email: user@daily.com
 - password: 12345678
 
+# Tech Stack
+- Node v20.16.0
+- Reactjs
+- TypeScript
+- Axios
+- Styled Components
+- Eslint
+- Firebase
+
+# Documentation
+Kunjungi link berikut `https://drive.google.com/file/d/1bTdFNss52zCO_g_075DarxpbcyBUitKN/view?usp=sharing`
 
 # React + TypeScript + Vite
 
