@@ -1,21 +1,22 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import { api } from "../api/baseUrl";
+import React, { Dispatch, SetStateAction } from "react";
+// import { api } from "../api/baseUrl";
 import styled from "styled-components";
 
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
 
-interface Article {
-  author?: string;
-  title?: string;
-  urlToImage?: string;
-  url?: string;
-  publishedAt?: string;
-}
+// interface Article {
+//   author?: string;
+//   title?: string;
+//   urlToImage?: string;
+//   url?: string;
+//   publishedAt?: string;
+// }
 
 interface FilterProps {
-  setNews: Dispatch<SetStateAction<Article[]>>;
   q?: string;
-  setLoading: Dispatch<SetStateAction<boolean>>;
+  filter: FilterState;
+  setFilter: Dispatch<SetStateAction<FilterState>>;
+  handleFilter:()=>Promise<void>;
 }
 
 interface FilterState {
@@ -65,31 +66,12 @@ const Div = styled.div`
   }
 `;
 
-const Filter: React.FC<FilterProps> = ({ setNews, q, setLoading }) => {
-  const [filter, setFilter] = useState<FilterState>({
-    lang: "",
-    sort: "",
-  });
-
-  const handleFilter = async () => {
-    setLoading(true);
-    const { lang, sort } = filter;
-    try {
-      const res = await api.get(
-        `everything?q=${q}${lang.length !== 0 && "&language=" + lang}${
-          sort.length !== 0 ? "&sortBy=" + sort : "&sortBy=publishedAt"
-        }&apiKey=${apiKey}`
-      );
-      setNews(res.data.articles);
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.log(error.message);
-      }
-      throw error;
-    } finally {
-      setLoading(false);
-    }
-  };
+const Filter: React.FC<FilterProps> = ({
+  q,
+  filter,
+  setFilter,
+  handleFilter
+}) => {
 
   return (
     <Div style={{ width: "200px" }}>
@@ -179,7 +161,6 @@ const Filter: React.FC<FilterProps> = ({ setNews, q, setLoading }) => {
       >
         Filter
       </FilterBtn>
-      {/* <button>Reset</button> */}
     </Div>
   );
 };

@@ -8,7 +8,7 @@ const Div = styled.div`
 `;
 
 export const NewsCardSkeleton: React.FC = () => {
-  const skeletonArray = Array.from({ length: 9 });
+  const skeletonArray = Array.from({ length: 20 });
 
   return (
     <NewsWrapper>

@@ -49,7 +49,7 @@ const Profile = styled(IoPersonCircleOutline)`
 `;
 
 const Name = styled(TextRedirect)`
-  margin-top: -6px;
+  margin-top: 0;
   margin-bottom: 0;
   text-align: center;
 `;
