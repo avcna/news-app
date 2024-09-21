@@ -27,7 +27,7 @@ API KEY yang digunakan pada file .env (secara default) dapat digunakan, tetapi d
 - Firebase
 
 # Documentation
-Kunjungi link berikut `https://drive.google.com/file/d/1bTdFNss52zCO_g_075DarxpbcyBUitKN/view?usp=sharing`
+Kunjungi link berikut `https://drive.google.com/file/d/1fdUiaSbTMaqPZ0Tg5g3krzRfxMfGYm7H/view?usp=sharing`
 
 # React + TypeScript + Vite
 
